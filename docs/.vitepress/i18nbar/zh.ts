@@ -11,7 +11,8 @@ export const ZHsidebar: DefaultTheme.Sidebar = {
       text: '快速开始',
       items: [
         { text: '简介', link: '/zh/pages/guide/' },
-        { text: '安装', link: '/zh/pages/guide/install' }
+        { text: '安装', link: '/zh/pages/guide/install' },
+        { text: '使用', link: '/zh/pages/guide/use' }
       ]
     },
     {
