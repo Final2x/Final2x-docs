@@ -19,15 +19,17 @@ hero:
     - theme: alt
       text: View on GitHub
       link: https://github.com/Tohrusky/Final2x
+    - theme: alt
+      text: Download
+      link: https://github.com/Tohrusky/Final2x/releases
 features:
-  - icon: 🔨
-    title: 功能/特点 1
-    details: 功能/特点 1 具体描述信息。
-  - icon: 🧩
-    title: 功能/特点 2
-    details: 功能/特点 2 具体描述信息。
-  - icon: ✈️
-    title: 功能/特点 3。
-    details: 功能/特点 3 具体描述信息。
+  - title: Cross-platform
+    details: The tool is available for Windows x64/arm64, MacOS x64/arm64, and Linux x64, allowing users to enjoy the benefits of super-resolution regardless of their operating system.
+  - title: Multiple models
+    details: It offers a wide range of models that can be used to achieve different levels of super-resolution, allowing users to choose the one that best suits their specific needs.
+  - title: Customizable Scale
+    details: Users have the flexibility to specify the desired output size for their images, ranging from small enhancements to large-scale super-resolution.
+  - title: i18n
+    details: The tool is available in English, Chinese, and Japanese, allowing users from different countries to enjoy the benefits of super-resolution.
 ---
 

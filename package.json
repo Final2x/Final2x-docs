@@ -1,6 +1,6 @@
 {
   "name": "Final2x-docs",
-  "version": "0.0.1",
+  "version": "1.x.x",
   "description": "docs for Final2x",
   "main": "index.js",
   "author": "Tohrusky",
@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
-    "serve": "vitepress serve docs",
+    "serve": "vitepress build docs && vitepress serve docs",
     "lint": "eslint docs/.vitepress --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.vue --fix"
   },
   "devDependencies": {
