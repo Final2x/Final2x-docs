@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 
 const MyPopoverMessages = ref('~something to show~ lala')
-const CustomScaleValue = ref(1.14)
 </script>
 
 <template>
@@ -63,14 +62,6 @@ const CustomScaleValue = ref(1.14)
           </template>
           <span> {{ MyPopoverMessages }} </span>
         </n-popover>
-
-        <n-input-number
-          v-model:value="CustomScaleValue"
-          :max="99999999"
-          :min="0"
-          :step="0.2"
-          style="width: 110px"
-        />
       </n-space>
     </n-card>
   </div>
