@@ -8,6 +8,7 @@ import NavigationButton from '../../components/NavigationButton.vue'
 import ExternalLinkButton from '../../components/ExternalLinkButton.vue'
 import UploadDraggerZone from '../../components/UploadDraggerZone.vue'
 import MyProgress from '../../components/MyProgress.vue'
+import PopoverButton from '../../components/PopoverButton.vue'
 
 export default {
   ...Theme,
@@ -20,5 +21,6 @@ export default {
     app.component('ExternalLinkButton', ExternalLinkButton)
     app.component('UploadDraggerZone', UploadDraggerZone)
     app.component('MyProgress', MyProgress)
+    app.component('PopoverButton', PopoverButton)
   }
 }

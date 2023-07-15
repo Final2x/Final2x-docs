@@ -11,7 +11,7 @@ export const ENsidebar: DefaultTheme.Sidebar = {
       text: 'Guide',
       items: [
         { text: 'Introduction', link: '/pages/guide/' },
-        { text: 'Start', link: '/pages/guide/install' },
+        { text: 'Install', link: '/pages/guide/install' },
         { text: 'Use', link: '/pages/guide/use' }
       ]
     },

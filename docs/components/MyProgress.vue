@@ -99,7 +99,7 @@ function getTextByLang(): Array<string> {
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .control {
   box-sizing: border-box;
   width: 100%;
