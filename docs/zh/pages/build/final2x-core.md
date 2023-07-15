@@ -17,6 +17,7 @@ python -m PyInstaller -n Final2x-core -i assets/favicon.ico __main__.py
 # copy files
 cp config.yaml dist/Final2x-core
 cp -r models dist/Final2x-core
+apt install -y libomp5 xdg-utils # use your package manager
 ```
 至此，Final2x-core 已经打包完成。
 

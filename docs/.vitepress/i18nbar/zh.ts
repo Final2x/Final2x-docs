@@ -20,7 +20,8 @@ export const ZHsidebar: DefaultTheme.Sidebar = {
       items: [
         { text: '前言', link: '/zh/pages/build/' },
         { text: 'xx-ncnn-py', link: '/zh/pages/build/xx-ncnn-py' },
-        { text: 'Final2x-core', link: '/zh/pages/build/final2x-core' }
+        { text: 'Final2x-core', link: '/zh/pages/build/final2x-core' },
+        { text: 'Final2x', link: '/zh/pages/build/final2x' }
       ]
     }
   ]
