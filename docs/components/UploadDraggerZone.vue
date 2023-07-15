@@ -39,6 +39,10 @@ function getTextByLang(): string {
 </template>
 
 <style lang="scss" scoped>
+.file-drag-zone {
+  background-color: transparent;
+}
+
 .file-drag-zone-logo-text {
   display: flex;
   flex-direction: column;

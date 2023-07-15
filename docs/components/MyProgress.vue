@@ -71,6 +71,7 @@ function getTextByLang(): Array<string> {
         indicator-placement="inside"
         processing
         type="line"
+        rail-color="rgba(230, 230, 230, 0.5)"
       />
       <n-button round secondary strong type="success" @click="StartSR">
         {{ text[0] }}
