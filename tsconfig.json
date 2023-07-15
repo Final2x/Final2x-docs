@@ -1,0 +1,9 @@
+{
+  "include": [
+    "docs/**/*",
+    "docs/.vitepress/**/*",
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -1,5 +1,5 @@
 # Final2x
-如果你不是那么幸运，你可能还需要自行构建 Final2x。对于 PyInstaller 打包的用户，需要自行将打包好的 Final2x-core 放入 /resources 文件夹下。
+你可能还需要自行构建 Final2x。对于 PyInstaller 打包的用户，需要自行将打包好的 Final2x-core 放入 /resources 文件夹下。
 
 ::: tip
 需要 Node.js 16.x 及以上版本，推荐使用最新版本。
