@@ -32,7 +32,7 @@ xattr -cr /Applications/Final2x.app
 提供 x64 架构。linux-pip 版本需要自行配置 python3.6+ 环境，并安装依赖库。pip script 需要添加到 PATH 环境变量中。
 ```bash
 pip install Final2x-core
-apt install -y libomp5 xdg-utils # 使用对应的包管理器
+apt install -y libomp5 xdg-utils # use your package manager
 ```
 安装完成后，在终端检查是否配置成功。
 ```bash

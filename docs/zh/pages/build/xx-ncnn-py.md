@@ -5,7 +5,6 @@ MacOS 11 可以使用 Github Action 构建，但 MacOS 10 可能不兼容。一�
 ## 本地构建
 供 MacOS 旧版本，以及一些 Linux 发行版参考。
 
-#### Vulkan SDK
 首先下载 [Vulkan SDK](https://github.com/Tohrusky/realcugan-ncnn-vulkan-build-macOS/releases) 并安装，这里是我的备份版本。
 
 ::: tip
