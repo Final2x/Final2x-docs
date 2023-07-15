@@ -1,30 +1,30 @@
-# 使用
-安装完成，打开软件时，可以看到下面的组件。
+# Usage
+After installation, when you open the software, you will see the following components.
 
-### 语言切换
-点击下面的按钮，可以切换语言。
+### Language Switch
+Click the button below to switch the language.
 <TranslationButton />
 
-### 上传图片
-把图片或文件夹拖拽到这个区域，可以上传待处理的图片。
+### Upload Image
+Drag and drop images or folders into this area to upload images for processing.
 <UploadDraggerZone />
 
-### 开始处理
-图片上传完成后，点击"开始"，即可以处理图片；点击"终止"，可以终止处理；点击"日志"，可以查看日志。完成处理后，会自动打开输出的文件夹。
+### Start Processing
+After the image upload is complete, click "START" to process the image. Click "TERMINATE" to stop the processing. Click "LOG" to view the logs. After the processing is complete, the output folder will be automatically opened.
 <MyProgress />
 
-### 路由导航
-点击即可切换到设置界面，再次点击可以切换回来。
+### Navigation
+Click to switch to the settings interface. Click again to switch back.
 <NavigationButton />
 
-### 悬浮提示
-把鼠标放在这些按钮上时，会显示一个悬浮提示框。点击 **Output Folder** 设置输出路径。**Custom Scale** 是一个浮点数，用于调整输出的大小。**Custom Scale** 为 0 时，输出的大小与 **Model Scale** 大小相同。
+### Tooltip
+When you hover over these buttons, a tooltip will be displayed. Click **Output Folder** to set the output path. **Custom Scale** is a floating-point number used to adjust the output size. When **Custom Scale** is set to 0, the output size will be the same as the **Model Scale**.
 <PopoverButton />
 
-### 黑暗模式
-点击下面的按钮，可以切换成黑暗模式，再次点击可以切换回来。
+### Dark Mode
+Click the button below to switch to dark mode. Click again to switch back.
 <DarkModeButton />
 
-### 外部链接
-点击下面这些按钮，可以打开外部链接。
+### External Links
+Click the buttons below to open external links.
 <ExternalLinkButton />

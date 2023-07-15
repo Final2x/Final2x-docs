@@ -12,14 +12,16 @@ export const ENsidebar: DefaultTheme.Sidebar = {
       items: [
         { text: 'Introduction', link: '/pages/guide/' },
         { text: 'Install', link: '/pages/guide/install' },
-        { text: 'Use', link: '/pages/guide/use' }
+        { text: 'Usage', link: '/pages/guide/use' }
       ]
     },
     {
       text: 'Build',
       items: [
         { text: 'Start', link: '/pages/build/' },
-        { text: 'xx-ncnn-py', link: '/pages/build/xx-ncnn-py' }
+        { text: 'xx-ncnn-py', link: '/pages/build/xx-ncnn-py' },
+        { text: 'Final2x-core', link: '/pages/build/final2x-core' },
+        { text: 'Final2x', link: '/pages/build/final2x' }
       ]
     }
   ]

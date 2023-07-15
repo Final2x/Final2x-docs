@@ -19,7 +19,7 @@ cp config.yaml dist/Final2x-core
 cp -r models dist/Final2x-core
 apt install -y libomp5 xdg-utils # use your package manager
 ```
-至此，Final2x-core 已经打包完成。
+至此，Final2x-core 已经打包完成，你可以在 dist 文件夹中找到它。
 
 ## pip
 pip script 需要添加到 PATH 环境变量中。
