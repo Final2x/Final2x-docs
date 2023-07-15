@@ -19,7 +19,7 @@ export const ENsidebar: DefaultTheme.Sidebar = {
       text: 'Build',
       items: [
         { text: 'Start', link: '/pages/build/' },
-        { text: '1', link: '/pages/build/build' }
+        { text: 'xx-ncnn-py', link: '/pages/build/xx-ncnn-py' }
       ]
     }
   ]

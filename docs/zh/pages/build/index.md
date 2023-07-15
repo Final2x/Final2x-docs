@@ -1,7 +1,7 @@
 # 构建指南
-对于使用 MacOS 12 以下，以及一些 Linux 发行版的用户，可能无法直接使用，这时候需要自行编译。
-对于 MacOS 用户，推荐使用 Github Action 在线编译部分需要的库（xx-ncnn-py）。
-本构建指南以 MacOS 为例。Linux 用户请参考 Github Action 的编译脚本，Linux 构建相对来说比较简单。
+对于使用 MacOS 12 以下，以及一些 Linux 发行版的用户，可能无法直接使用，这时候需要自行构建。
+对于 MacOS 用户，推荐使用 Github Action 在线构建部分需要的库（xx-ncnn-py）。
+本构建指南以 MacOS 为例，Linux 用户请参考 Github Action 的构建脚本（相对来说比较简单）。
 
 目前我们需要构建的内容如下，请按照顺序进行构建：
 
