@@ -47,14 +47,12 @@ const MyPopoverMessages = ref('~something to show~ lala')
       <br />
 
       <n-space>
-        <n-upload>
-          <n-popover trigger="hover">
-            <template #trigger>
-              <n-button round type="success"> Output Folder </n-button>
-            </template>
-            <span> {{ MyPopoverMessages }} </span>
-          </n-popover>
-        </n-upload>
+        <n-popover trigger="hover">
+          <template #trigger>
+            <n-button round type="success"> Output Folder </n-button>
+          </template>
+          <span> {{ MyPopoverMessages }} </span>
+        </n-popover>
 
         <n-popover trigger="hover">
           <template #trigger>

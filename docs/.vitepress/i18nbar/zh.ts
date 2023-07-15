@@ -18,8 +18,8 @@ export const ZHsidebar: DefaultTheme.Sidebar = {
     {
       text: '构建指南',
       items: [
-        { text: '简介', link: '/zh/pages/build/' },
-        { text: '开始', link: '/zh/pages/build/build' }
+        { text: '前言', link: '/zh/pages/build/' },
+        { text: 'xx-ncnn-py', link: '/zh/pages/build/xx-ncnn-py' }
       ]
     }
   ]

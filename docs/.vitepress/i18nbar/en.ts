@@ -18,8 +18,8 @@ export const ENsidebar: DefaultTheme.Sidebar = {
     {
       text: 'Build',
       items: [
-        { text: 'Introduction', link: '/pages/build/' },
-        { text: 'Start', link: '/pages/build/build' }
+        { text: 'Start', link: '/pages/build/' },
+        { text: '1', link: '/pages/build/build' }
       ]
     }
   ]
