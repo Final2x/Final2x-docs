@@ -21,6 +21,7 @@ git submodule update --init --recursive
 # your vulkan sdk path
 export VULKAN_SDK=/Users/tohru/VulkanSDK/1.2.162.1/macOS 
 # create build dir
+cd src
 mkdir build-x86_64 && cd build-x86_64
 # build
 cmake -DUSE_STATIC_MOLTENVK=ON -DCMAKE_OSX_ARCHITECTURES="x86_64" \
@@ -29,6 +30,7 @@ cmake -DUSE_STATIC_MOLTENVK=ON -DCMAKE_OSX_ARCHITECTURES="x86_64" \
       ..
 cmake --build . -j 8
 # build python wheel
+cd ../../
 pip install --upgrade pip chardet
 pip install twine wheel setuptools
 pip install -r requirements.txt
