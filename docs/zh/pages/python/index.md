@@ -5,7 +5,7 @@ Final2x-core 也可以作为一个 Python 库（Python3.6+）使用，下面是�
 pip install Final2x-core
 ```
 
-使用 Final2x-core 提供的 SR_queue 方法批量处理 RGBA 图片：
+#### 使用 Final2x-core 提供的 SR_queue 方法批量处理 RGBA 图片：
 ```python
 import Final2x_core as Fin
 
@@ -20,7 +20,7 @@ def upscale(picPATH: list[str]) -> None:
     Fin.SR_queue()
 ```
 
-使用 Final2x-core 提供的 SR 类自定义处理：
+#### 使用 Final2x-core 提供的 SR 类自定义处理：
 ```python
 import cv2
 import Final2x_core as Fin
