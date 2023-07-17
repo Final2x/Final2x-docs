@@ -3,6 +3,8 @@
 
 ::: warning
 MacOS 12 以下，以及一些 Linux 发行版可能无法正常运行。请参考 [构建指南](/zh/pages/build/) 自行构建。
+
+此外，Windows 10 以下不在支持范围内。
 :::
 
 ::: tip 

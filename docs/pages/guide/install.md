@@ -3,6 +3,8 @@ Download the latest installation package from the [Github Release](https://githu
 
 ::: warning
 Versions prior to macOS 12 and some Linux distributions may not work properly. Please refer to the [Build](/pages/build/) Guide to build it yourself.
+
+In addition, Windows versions prior to Windows 10 are not supported.
 :::
 
 ::: tip 
