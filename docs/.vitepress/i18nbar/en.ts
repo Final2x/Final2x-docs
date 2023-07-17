@@ -23,6 +23,10 @@ export const ENsidebar: DefaultTheme.Sidebar = {
         { text: 'Final2x-core', link: '/pages/build/final2x-core' },
         { text: 'Final2x', link: '/pages/build/final2x' }
       ]
+    },
+    {
+      text: 'Python',
+      items: [{ text: 'Final2x-core', link: '/pages/python/' }]
     }
   ]
 }

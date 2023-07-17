@@ -23,6 +23,10 @@ export const ZHsidebar: DefaultTheme.Sidebar = {
         { text: 'Final2x-core', link: '/zh/pages/build/final2x-core' },
         { text: 'Final2x', link: '/zh/pages/build/final2x' }
       ]
+    },
+    {
+      text: 'Python',
+      items: [{ text: 'Final2x-core', link: '/zh/pages/python/' }]
     }
   ]
 }
