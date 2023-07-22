@@ -1,6 +1,4 @@
-<script lang="ts" setup>
-import { ImgComparisonSlider } from '@img-comparison-slider/vue'
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <ImgComparisonSlider>
