@@ -31,7 +31,7 @@ xattr -cr /Applications/Final2x.app
 ```
 
 ## Linux
-The x64 architecture is available. The linux-pip version requires configuring the python3.6+ environment and installing the required libraries. The pip script needs to be added to the PATH environment variable.
+The x64 architecture is available. The linux-pip version requires configuring the python3.8+ environment and installing the required libraries. The pip script needs to be added to the PATH environment variable.
 ```bash
 pip install Final2x-core
 apt install -y libomp5 xdg-utils # use your package manager

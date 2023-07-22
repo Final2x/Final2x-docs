@@ -1,5 +1,5 @@
 # Final2x-core
-Final2x-core 也可以作为一个 Python 库（Python3.6+）使用，下面是几个简单的例子。
+Final2x-core 也可以作为一个 Python 库（Python3.8+）使用，下面是几个简单的例子。
 
 ```bash
 pip install Final2x-core

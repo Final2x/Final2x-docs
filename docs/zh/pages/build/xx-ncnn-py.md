@@ -10,7 +10,7 @@ MacOS 11 可以使用 Github Action 构建，但 MacOS 10 可能不兼容。一�
 ::: tip
 Vulkan SDK 建议选择旧版本 1.2.162.1。
 
-请确保环境已经有 Python 3.6+, Clang/GCC 和 CMake 编译工具链。
+请确保环境已经有 Python 3.8+, Clang/GCC 和 CMake 编译工具链。
 :::
 
 ```bash

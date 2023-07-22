@@ -1,5 +1,5 @@
 # Final2x-core
-Final2x-core can also be used as a Python library (Python 3.6+). Here are a few simple examples.
+Final2x-core can also be used as a Python library (Python 3.8+). Here are a few simple examples.
 
 ```bash
 pip install Final2x-core

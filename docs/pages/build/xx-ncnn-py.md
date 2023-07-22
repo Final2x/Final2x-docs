@@ -10,7 +10,7 @@ First, download the [Vulkan SDK](https://github.com/Tohrusky/realcugan-ncnn-vulk
 ::: tip
 It is recommended to choose an older version, such as 1.2.162.1, for the Vulkan SDK.
 
-Please ensure that your environment has Python 3.6+, Clang/GCC and CMake compilation toolchains.
+Please ensure that your environment has Python 3.8+, Clang/GCC and CMake compilation toolchains.
 :::
 
 ```bash

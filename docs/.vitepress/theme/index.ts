@@ -9,6 +9,7 @@ import ExternalLinkButton from '../../components/ExternalLinkButton.vue'
 import UploadDraggerZone from '../../components/UploadDraggerZone.vue'
 import MyProgress from '../../components/MyProgress.vue'
 import PopoverButton from '../../components/PopoverButton.vue'
+import ImageComparison from "../../components/ImageComparison.vue";
 
 export default {
   ...Theme,
@@ -22,5 +23,6 @@ export default {
     app.component('UploadDraggerZone', UploadDraggerZone)
     app.component('MyProgress', MyProgress)
     app.component('PopoverButton', PopoverButton)
+    app.component('ImageComparison', ImageComparison)
   }
 }
