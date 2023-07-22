@@ -14,6 +14,15 @@ unpacked 为便携版。
 ## Windows 
 提供 x64/arm64 架构，请下载对应架构的版本，一般为 x64。推荐下载 setup 版本。
 
+::: tip 
+此外你也可以通过包管理器来安装、更新。
+:::
+
+#### winget
+```bash
+winget install Final2x
+```
+
 ## MacOS
 提供 x64/arm64 架构，Apple Silicon Mac 请下载 arm64。推荐下载 dmg 版本。
 

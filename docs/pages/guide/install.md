@@ -14,6 +14,15 @@ The "unpacked" version is a portable version.
 ## Windows 
 Both x64 and arm64 architectures are available. Please download the version that matches your architecture, usually x64. It is recommended to download the setup version.
 
+::: tip 
+Furthermore, you can use package mananger to install and upgrade.
+:::
+
+#### winget
+```bash
+winget install Final2x
+```
+
 ## MacOS
 Both x64 and arm64 architectures are available. For Apple Silicon Mac, please download the arm64 version. It is recommended to download the dmg version.
 
