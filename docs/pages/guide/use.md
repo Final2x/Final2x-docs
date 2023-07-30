@@ -6,7 +6,7 @@ Click the button below to switch the language.
 <TranslationButton />
 
 ### Upload Image
-Drag and drop images or folders into this area to upload images for processing.
+Click or drag and drop images or folders into this area to upload images for processing.
 <UploadDraggerZone />
 
 ### Start Processing

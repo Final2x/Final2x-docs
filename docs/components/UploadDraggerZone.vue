@@ -2,7 +2,7 @@
 import { FileImageOutlined } from '@vicons/antd'
 import { onMounted, ref } from 'vue'
 
-const text = ref('Drag and drop images or folders here to upload')
+const text = ref('Click or drag and drop images or folders here to upload')
 
 onMounted(() => {
   setTimeout(() => {
@@ -14,15 +14,15 @@ function getTextByLang(): string {
   const lang = document.documentElement.lang
   console.log(lang)
   if (lang === 'zh') {
-    return '将图片或文件夹拖拽到此处上传'
+    return '点击或拖拽图片或文件夹到此处上传'
   } else {
-    return 'Drag and drop images or folders here to upload'
+    return 'Click or drag and drop images or folders here to upload'
   }
 }
 </script>
 
 <template>
-  <div id="file_drag" class="for_file_drag" @click.prevent>
+  <div id="file_drag" class="for_file_drag">
     <n-upload multiple directory-dnd class="n-upload">
       <n-upload-dragger class="file-drag-zone">
         <div class="file-drag-zone-logo-text">
