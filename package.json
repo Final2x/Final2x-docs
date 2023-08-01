@@ -15,6 +15,14 @@
     "lint": "eslint docs/.vitepress . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.vue --fix",
     "typecheck": "vue-tsc --noEmit"
   },
+  "dependencies": {
+    "@img-comparison-slider/vue": "^8.0.0",
+    "@vicons/antd": "^0.12.0",
+    "@vicons/ionicons5": "^0.12.0",
+    "naive-ui": "^2.34.4",
+    "sass": "^1.63.6",
+    "vue": "^3.3.4"
+  },
   "devDependencies": {
     "@babel/types": "^7.22.5",
     "@rushstack/eslint-patch": "^1.3.2",
@@ -27,15 +35,7 @@
     "eslint": "^8.44.0",
     "eslint-plugin-vue": "^9.15.1",
     "prettier": "^2.8.8",
-    "vitepress": "^1.0.0-beta.5"
-  },
-  "dependencies": {
-    "@img-comparison-slider/vue": "^8.0.0",
-    "@vicons/antd": "^0.12.0",
-    "@vicons/ionicons5": "^0.12.0",
-    "naive-ui": "^2.34.4",
-    "sass": "^1.63.6",
-    "vue": "^3.3.4",
+    "vitepress": "^1.0.0-beta.5",
     "vue-tsc": "^1.8.4"
   }
 }
