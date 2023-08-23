@@ -1,6 +1,14 @@
 # 使用
 安装完成，打开软件时，可以看到下面的组件。
 
+::: warning
+不支持 **Vulkan** 的显卡，请使用 **CPU** 模式，参考如下：
+
+Nvidia https://developer.nvidia.com/vulkan-driver
+
+AMD https://www.amd.com/en/technologies/vulkan
+:::
+
 ### 语言切换
 点击下面的按钮，可以切换语言。
 <TranslationButton />

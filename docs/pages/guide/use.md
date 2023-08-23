@@ -1,6 +1,14 @@
 # Usage
 After installation, when you open the software, you will see the following components.
 
+::: warning
+Graphics cards that do not support **Vulkan** should use **CPU** mode, as follows:
+
+Nvidia https://developer.nvidia.com/vulkan-driver
+
+AMD https://www.amd.com/en/technologies/vulkan
+:::
+
 ### Language Switch
 Click the button below to switch the language.
 <TranslationButton />
