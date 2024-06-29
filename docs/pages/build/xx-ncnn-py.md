@@ -29,15 +29,11 @@ cmake -DUSE_STATIC_MOLTENVK=ON -DCMAKE_OSX_ARCHITECTURES="x86_64" \
       -DVulkan_LIBRARY=/Users/tohru/VulkanSDK/1.2.162.1/MoltenVK/MoltenVK.xcframework/macos-arm64_x86_64/libMoltenVK.a \
       ..
 cmake --build . -j 8
+cp src/build-x86_64/*.so src/realcugan_ncnn_py
+
 # build python wheel
-cd ../../
-pip install --upgrade pip chardet
-pip install twine wheel setuptools
-pip install -r requirements.txt
-cp src/build-x86_64/*.so realcugan_ncnn_py
-cp src/realcugan_ncnn_vulkan.py realcugan_ncnn_py
-cp -r models realcugan_ncnn_py
-python setup.py bdist_wheel
+pdm install
+pdm build
 ```
 With these steps, the building process is complete, and the wheel file can be found in the dist directory. 
 ```bash
@@ -47,92 +43,10 @@ to install it.
 
 
 ## Github Action
-[Here is a reference for a completed version of the build.](https://github.com/SRVFI-Raws/realcugan-ncnn-py-macos-11/actions/workflows/Build.yml)
+[Here is a reference for a completed version of the build.](https://github.com/Final2x/realcugan-ncnn-py/blob/main/.github/workflows/CI-MacOS-Universal-Clang.yml)
 
-First, fork the repository and enable Github Action. Delete the original build script and add a build script as shown below. Click to start the build:
+Fork the repository and enable Github Action, edit the original build script and click to start the build
 
 ::: tip
 If you don't need multiple versions of Python libraries, you can keep only the versions corresponding to your environment. This way, you can save build time.
 :::
-
-```yaml
-name: Build-macos-11
-
-on:
-  workflow_dispatch:
-
-env:
-  DEVELOPER_DIR: /Applications/Xcode_13.2.1.app/Contents/Developer
-
-jobs:
-  macos:
-    strategy:
-      matrix:
-        python-version: ["3.6", "3.7", "3.8", "3.9", "3.10", "3.11"]
-
-    runs-on: macos-11
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          submodules: 'recursive'
-
-      - uses: maxim-lobanov/setup-xcode@v1
-        with:
-          xcode-version: '13.2.1'
-
-      - uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
-          architecture: x64
-
-      - name: Check Python version
-        run: |
-          python --version
-
-      - name: cache-vulkansdk
-        id: cache-vulkansdk
-        uses: actions/cache@v3.2.4
-        with:
-          path: "src/vulkansdk-macos-1.2.162.1"
-          key: vulkansdk-macos-1.2.162.1
-
-      - name: vulkansdk
-        if: steps.cache-vulkansdk.outputs.cache-hit != 'true'
-        run: |
-          cd src
-          wget https://github.com/Tohrusky/realcugan-ncnn-vulkan-build-macOS/releases/download/v0.0.1/vulkansdk-macos-1.2.162.1.dmg -O vulkansdk-macos-1.2.162.1.dmg
-          hdiutil attach vulkansdk-macos-1.2.162.1.dmg
-          cp -r /Volumes/vulkansdk-macos-1.2.162.1 .
-          rm -rf vulkansdk-macos-1.2.162.1/Applications
-          find vulkansdk-macos-1.2.162.1 -type f | grep -v -E 'vulkan|glslang|MoltenVK' | xargs rm
-          hdiutil detach /Volumes/vulkansdk-macos-1.2.162.1
-
-
-      - name: build-x86_64
-        run: |
-          cd src
-          export VULKAN_SDK=`pwd`/vulkansdk-macos-1.2.162.1/macOS
-          mkdir build-x86_64 && cd build-x86_64
-          cmake -DUSE_STATIC_MOLTENVK=ON -DCMAKE_OSX_ARCHITECTURES="x86_64" \
-              -DCMAKE_CROSSCOMPILING=ON -DCMAKE_SYSTEM_PROCESSOR=x86_64 \
-              -DVulkan_INCLUDE_DIR=`pwd`/../vulkansdk-macos-1.2.162.1/MoltenVK/include \
-              -DVulkan_LIBRARY=`pwd`/../vulkansdk-macos-1.2.162.1/MoltenVK/MoltenVK.xcframework/macos-arm64_x86_64/libMoltenVK.a \
-              ..
-          cmake --build . -j 4
-
-      - name: build wheel
-        run: |
-          pip install --upgrade pip chardet
-          pip install twine wheel setuptools
-          pip install -r requirements.txt
-          cp src/build-x86_64/*.so realcugan_ncnn_py
-          cp src/realcugan_ncnn_vulkan.py realcugan_ncnn_py
-          cp -r models realcugan_ncnn_py
-          python setup.py bdist_wheel
-
-      - name: upload
-        uses: actions/upload-artifact@v3
-        with:
-          name: realcugan-ncnn-py-macos-python${{ matrix.python-version }}
-          path: dist
-```

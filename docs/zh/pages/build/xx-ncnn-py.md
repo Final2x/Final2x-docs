@@ -29,15 +29,11 @@ cmake -DUSE_STATIC_MOLTENVK=ON -DCMAKE_OSX_ARCHITECTURES="x86_64" \
       -DVulkan_LIBRARY=/Users/tohru/VulkanSDK/1.2.162.1/MoltenVK/MoltenVK.xcframework/macos-arm64_x86_64/libMoltenVK.a \
       ..
 cmake --build . -j 8
+cp src/build-x86_64/*.so src/realcugan_ncnn_py
+
 # build python wheel
-cd ../../
-pip install --upgrade pip chardet
-pip install twine wheel setuptools
-pip install -r requirements.txt
-cp src/build-x86_64/*.so realcugan_ncnn_py
-cp src/realcugan_ncnn_vulkan.py realcugan_ncnn_py
-cp -r models realcugan_ncnn_py
-python setup.py bdist_wheel
+pdm install
+pdm build
 ```
 至此构建完成，wheel 文件在 dist 目录下。 
 ```bash
@@ -47,92 +43,10 @@ pip install dist/*.whl
 
 
 ## Github Action
-[这里提供一份构建完成的版本供参考。](https://github.com/SRVFI-Raws/realcugan-ncnn-py-macos-11/actions/workflows/Build.yml)
+[这里提供一份构建完成的版本供参考。](https://github.com/Final2x/realcugan-ncnn-py/blob/main/.github/workflows/CI-MacOS-Universal-Clang.yml)
 
-首先 fork 仓库，启用 Github Action，删除原来的构建脚本。添加一个如下所示的构建脚本，点击即可开始构建：
+fork 仓库，启用 Github Action，修改原来的构建脚本，点击即可开始构建
 
 ::: tip
 如果你不需要这么多版本的 python 库，可以只保留你环境对应的版本，这样可以节省构建时间。
 :::
-
-```yaml
-name: Build-macos-11
-
-on:
-  workflow_dispatch:
-
-env:
-  DEVELOPER_DIR: /Applications/Xcode_13.2.1.app/Contents/Developer
-
-jobs:
-  macos:
-    strategy:
-      matrix:
-        python-version: ["3.6", "3.7", "3.8", "3.9", "3.10", "3.11"]
-
-    runs-on: macos-11
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          submodules: 'recursive'
-
-      - uses: maxim-lobanov/setup-xcode@v1
-        with:
-          xcode-version: '13.2.1'
-
-      - uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
-          architecture: x64
-
-      - name: Check Python version
-        run: |
-          python --version
-
-      - name: cache-vulkansdk
-        id: cache-vulkansdk
-        uses: actions/cache@v3.2.4
-        with:
-          path: "src/vulkansdk-macos-1.2.162.1"
-          key: vulkansdk-macos-1.2.162.1
-
-      - name: vulkansdk
-        if: steps.cache-vulkansdk.outputs.cache-hit != 'true'
-        run: |
-          cd src
-          wget https://github.com/Tohrusky/realcugan-ncnn-vulkan-build-macOS/releases/download/v0.0.1/vulkansdk-macos-1.2.162.1.dmg -O vulkansdk-macos-1.2.162.1.dmg
-          hdiutil attach vulkansdk-macos-1.2.162.1.dmg
-          cp -r /Volumes/vulkansdk-macos-1.2.162.1 .
-          rm -rf vulkansdk-macos-1.2.162.1/Applications
-          find vulkansdk-macos-1.2.162.1 -type f | grep -v -E 'vulkan|glslang|MoltenVK' | xargs rm
-          hdiutil detach /Volumes/vulkansdk-macos-1.2.162.1
-
-
-      - name: build-x86_64
-        run: |
-          cd src
-          export VULKAN_SDK=`pwd`/vulkansdk-macos-1.2.162.1/macOS
-          mkdir build-x86_64 && cd build-x86_64
-          cmake -DUSE_STATIC_MOLTENVK=ON -DCMAKE_OSX_ARCHITECTURES="x86_64" \
-              -DCMAKE_CROSSCOMPILING=ON -DCMAKE_SYSTEM_PROCESSOR=x86_64 \
-              -DVulkan_INCLUDE_DIR=`pwd`/../vulkansdk-macos-1.2.162.1/MoltenVK/include \
-              -DVulkan_LIBRARY=`pwd`/../vulkansdk-macos-1.2.162.1/MoltenVK/MoltenVK.xcframework/macos-arm64_x86_64/libMoltenVK.a \
-              ..
-          cmake --build . -j 4
-
-      - name: build wheel
-        run: |
-          pip install --upgrade pip chardet
-          pip install twine wheel setuptools
-          pip install -r requirements.txt
-          cp src/build-x86_64/*.so realcugan_ncnn_py
-          cp src/realcugan_ncnn_vulkan.py realcugan_ncnn_py
-          cp -r models realcugan_ncnn_py
-          python setup.py bdist_wheel
-
-      - name: upload
-        uses: actions/upload-artifact@v3
-        with:
-          name: realcugan-ncnn-py-macos-python${{ matrix.python-version }}
-          path: dist
-```

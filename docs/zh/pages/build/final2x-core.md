@@ -11,13 +11,8 @@
 git clone https://github.com/Tohrusky/Final2x-core
 cd Final2x-core
 # build
-pip install -r requirements.txt
-pip install pyinstaller
-python -m PyInstaller -n Final2x-core -i assets/favicon.ico __main__.py
-# copy files
-cp config.yaml dist/Final2x-core
-cp -r models dist/Final2x-core
-apt install -y libomp5 xdg-utils # use your package manager
+pdm install
+pdm run pyinstaller
 ```
 至此，Final2x-core 已经打包完成，你可以在 dist 文件夹中找到它。
 
