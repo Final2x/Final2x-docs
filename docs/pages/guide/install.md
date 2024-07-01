@@ -26,11 +26,6 @@ winget install Final2x
 ## MacOS
 Both x64 and arm64 architectures are available. For Apple Silicon Mac, please download the arm64 version. It is recommended to download the dmg version.
 
-::: warning
-The arm64 version of Final2x-core is built locally on the latest macOS, not using Github Action, which may cause some incompatibilities. 
-Additionally, for security reasons, it is recommended to build it yourself.
-:::
-
 After installation, run the following two commands in the terminal to allow the application to run. Due to Apple's security checks, the first use may be very slow.
 
 ```bash
